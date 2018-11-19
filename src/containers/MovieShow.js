@@ -7,6 +7,10 @@ const MovieShow = props =>
   </div>;
 
 
-  const mapStateToProps = (state) => {}
+  const mapStateToProps = (state, ownProps) => {
+    return {
+      movieId: ownProps.match.params.movieId
+    }
+  }
 
   export default connect(mapStateToProps)(MovieShow);
