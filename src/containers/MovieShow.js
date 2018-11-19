@@ -15,3 +15,5 @@ const mapStateToProps = (state, ownProps) => {
     return { movie: {} }
   }
 }
+
+export default connect(mapStateToProps)(MovieShow);
