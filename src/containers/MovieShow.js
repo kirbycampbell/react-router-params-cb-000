@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 const MovieShow = props =>
   <div>
     <h3>Movie Show Component!</h3>
-  </div>;
+  </div>
 
+const mapStateToProps = (state, ownProps) => {
+  const movie = state.movies.find(movie => movie.id == ownProps.match.params.movieId)
 
-  const mapStateToProps = (state, ownProps) => {
-    return {
-      movieId: ownProps.match.params.movieId
-    }
+  if (movie) {
+    return { movie }
+  } else {
+    return { movie: {} }
   }
-
-  export default connect(mapStateToProps)(MovieShow);
+}
